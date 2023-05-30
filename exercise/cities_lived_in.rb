@@ -10,7 +10,7 @@ cities_lived_in = {
 # Get a unique list of all of the cities that these humans have lived in  
 # ["Philadelphia", "Fort Collins", "Seattle", "Denver", "Santa Fe", "Portland", "Lansing", "Columbus", "Austin"]
 
-
+p cities_lived_in.values.flatten.uniq
 
 
 # Problem #2: 
@@ -21,6 +21,9 @@ cities_lived_in = {
 # or
 # ["Michaela", "Mike", "Alex"]
 
+people_in_philadelphia = cities_lived_in.select { |people,cities| cities.include?("Philadelphia") }.keys
+
+p people_in_philadelphia
 
 
 
@@ -38,3 +41,13 @@ cities_lived_in = {
 #     "Columbus => 1,
 #     "Austin" => 1
 # }
+
+population = Hash.new(0)
+
+cities_lived_in.values.flatten.each do |city|
+    population[city] += 1
+end
+
+p population
+
+
