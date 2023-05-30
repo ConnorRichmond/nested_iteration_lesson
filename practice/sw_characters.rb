@@ -215,7 +215,9 @@ characters = [
 # Get a unique list of the homeworlds
 
 # ["Tatooine", "Naboo", "Alderaan" ... ]
+homeworlds = characters.map { |character| character["homeworld"] }.uniq
 
+p homeworlds
 
 # Challenge #2
 
